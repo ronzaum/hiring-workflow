@@ -1,0 +1,25 @@
+# Personal master content — never publish
+master/CV_master.txt
+master/CV_master*.pdf
+master/profile_master.md
+master/linkedin_master.txt
+master/cv_master_templatingandchangecontrol.txt
+
+# Personal system tracking
+system/
+
+# Role-specific applications (personal)
+roles/
+
+# Claude local settings
+.claude/settings.local.json
+
+# Auto memory (personal)
+memory/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Workspace files
+*.code-workspace
