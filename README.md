@@ -72,12 +72,13 @@ Success = a hiring manager immediately understanding where you fit and choosing 
 
 A self-contained FastAPI layer exposes the workflow as a REST API — useful for integrations, portfolio demos, or tooling built on top of the pipeline.
 
-**Stack:** FastAPI · SQLAlchemy · SQLite · Pydantic v2 · WeasyPrint
+**Stack:** FastAPI · SQLAlchemy · SQLite · Pydantic v2 · WeasyPrint · Anthropic SDK
 
 **Run locally:**
 
 ```bash
 pip install -r api/requirements.txt
+export ANTHROPIC_API_KEY=your_key_here
 uvicorn api.main:app --reload
 ```
 
@@ -96,8 +97,11 @@ Auto-docs at `http://127.0.0.1:8000/docs`
 | GET | `/roles/{id}/steps` | List pipeline steps for a role |
 | PATCH | `/roles/{id}/steps/{step_number}` | Mark step complete / update output file |
 | POST | `/cv/generate` | Generate CV PDF from section-marker text |
+| POST | `/roles/{id}/analyze` | Autonomous company research + positioning brief |
 
 The CV endpoint wraps `master/generate_cv.py` directly — no logic duplication.
+
+The analyze endpoint runs an agentic Claude loop with web search: given only a company name and role title, it researches founders, funding, product signals, and recent public communications, then synthesises a positioning brief grounded in `master/identity.txt` and `master/profile_master.md`. Nothing is invented.
 
 ---
 

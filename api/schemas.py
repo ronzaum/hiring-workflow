@@ -99,3 +99,40 @@ class CVGenerateResponse(BaseModel):
     On success the endpoint streams a FileResponse — this schema is error-only.
     """
     detail: str
+
+
+# ─── ANALYZE ──────────────────────────────────────────────────────────────────
+
+class CompanyAnalysisResponse(BaseModel):
+    """
+    Structured positioning brief returned by POST /roles/{id}/analyze.
+
+    Every field is grounded in identity.txt and profile_master.md — nothing
+    is invented or extrapolated beyond what the candidate has actually done.
+    """
+    # What the company actually does, their stage, and current focus
+    company_briefing:     str
+
+    # Founder background and what they personally signal they care about
+    # (sourced from public posts, interviews, LinkedIn, funding announcements)
+    founder_profile:      str
+
+    # Recent public signals — posts, announcements, or themes revealing priorities
+    recent_signals:       List[str]
+
+    # One-paragraph: how to frame the candidate's identity for this specific
+    # company and founder, given everything found in research
+    positioning_angle:    str
+
+    # Specific words and phrases the company/founder uses — mirror these
+    language_to_mirror:   List[str]
+
+    # Specific proof points from profile_master that land hardest here
+    # Referenced by actual achievement, not invented
+    proof_points:         List[str]
+
+    # "go" or "no-go" based on genuine fit assessment
+    go_no_go:             str
+
+    # 0–100 estimated interview probability given current positioning
+    interview_probability: int

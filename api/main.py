@@ -17,6 +17,7 @@ from fastapi import FastAPI
 from api.database import init_db
 from api.routes.roles import router as roles_router
 from api.routes.cv import router as cv_router
+from api.routes.analyze import router as analyze_router
 
 
 # ─── LIFESPAN ─────────────────────────────────────────────────────────────────
@@ -34,7 +35,8 @@ app = FastAPI(
     title="Hiring Workflow API",
     description=(
         "REST API exposing the AI-native hiring workflow — "
-        "role pipeline tracking, step management, and CV PDF generation."
+        "role pipeline tracking, step management, CV PDF generation, "
+        "and autonomous company research + positioning."
     ),
     version="1.0.0",
     lifespan=lifespan,
@@ -44,6 +46,7 @@ app = FastAPI(
 
 app.include_router(roles_router)
 app.include_router(cv_router)
+app.include_router(analyze_router)
 
 
 # ─── HEALTH ───────────────────────────────────────────────────────────────────
