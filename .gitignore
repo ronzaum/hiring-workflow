@@ -17,6 +17,13 @@ roles/
 # Auto memory (personal)
 memory/
 
+# API — generated database and bytecode
+api/hiring_workflow.db
+api/__pycache__/
+api/routes/__pycache__/
+*.pyc
+*.pyo
+
 # macOS
 .DS_Store
 **/.DS_Store

@@ -68,6 +68,39 @@ Success = a hiring manager immediately understanding where you fit and choosing 
 
 ---
 
+## API
+
+A self-contained FastAPI layer exposes the workflow as a REST API — useful for integrations, portfolio demos, or tooling built on top of the pipeline.
+
+**Stack:** FastAPI · SQLAlchemy · SQLite · Pydantic v2 · WeasyPrint
+
+**Run locally:**
+
+```bash
+pip install -r api/requirements.txt
+uvicorn api.main:app --reload
+```
+
+Auto-docs at `http://127.0.0.1:8000/docs`
+
+**Endpoints:**
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/health` | Liveness probe |
+| GET | `/roles` | List all roles |
+| POST | `/roles` | Create role (auto-seeds 10 pipeline steps) |
+| GET | `/roles/{id}` | Get role + steps |
+| PATCH | `/roles/{id}` | Update status / probability / notes |
+| DELETE | `/roles/{id}` | Delete role and steps |
+| GET | `/roles/{id}/steps` | List pipeline steps for a role |
+| PATCH | `/roles/{id}/steps/{step_number}` | Mark step complete / update output file |
+| POST | `/cv/generate` | Generate CV PDF from section-marker text |
+
+The CV endpoint wraps `master/generate_cv.py` directly — no logic duplication.
+
+---
+
 ## Stack
 
-Claude Code · Python · HTML/CSS
+Claude Code · Python · FastAPI · HTML/CSS
