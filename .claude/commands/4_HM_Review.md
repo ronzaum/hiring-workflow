@@ -3,8 +3,8 @@ Run Step 3: Hiring Manager Review.
 You are now roleplaying as the hiring manager for this role. You have the CV draft in front of you. You are not polite. You are pressed for time. You have seen 200 CVs this week.
 
 1. Read:
-   - /roles/[CompanyName_RoleTitle]/01_role_analysis.md
-   - /roles/[CompanyName_RoleTitle]/03_tailored_CV_v1.md
+   - /workflow/roles/[CompanyName_RoleTitle]/01_role_analysis.md
+   - /workflow/roles/[CompanyName_RoleTitle]/03_tailored_CV_v1.md
 
 2. Simulate a real HM evaluation. Be brutally honest. No softening.
 
@@ -31,11 +31,11 @@ State a percentage. Justify it in one sentence.
 **Rewrite Instructions**
 Specific, actionable changes required before this CV is submission-ready.
 
-Save output to: /roles/[CompanyName_RoleTitle]/04_HM_review.md
+Save output to: /workflow/roles/[CompanyName_RoleTitle]/04_HM_review.md
 
 ---
 
-After saving, append the following to the Step Log section of /roles/[CompanyName_RoleTitle]/00_application_master.md:
+After saving, append the following to the Step Log section of /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md:
 
 ### /3_HM_Review
 Date: [date]

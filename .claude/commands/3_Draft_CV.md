@@ -1,12 +1,12 @@
 Run Step 2: Draft CV (V1).
 
 1. Read:
-   - /master/CV_master.txt
-   - /master/profile_master.md
-   - /master/writing_rules.txt
-   - /master/identity.txt
-   - /roles/[CompanyName_RoleTitle]/01_role_analysis.md
-   - /roles/[CompanyName_RoleTitle]/02_fit_diagnostic.md
+   - /workflow/master/CV_master.txt
+   - /workflow/master/profile_master.md
+   - /workflow/master/writing_rules.txt
+   - /workflow/master/identity.txt
+   - /workflow/roles/[CompanyName_RoleTitle]/01_role_analysis.md
+   - /workflow/roles/[CompanyName_RoleTitle]/02_fit_diagnostic.md
 
 2. Produce a tailored CV draft by mechanically transforming CV_master:
    - Apply all writing_rules constraints
@@ -22,18 +22,18 @@ Run Step 2: Draft CV (V1).
 
 5. Output format — REQUIRED for PDF generation:
    The file must use section markers exactly as defined in CV_master.txt.
-   Read /master/cv_master_templatingandchangecontrol.txt for the full format spec.
+   Read /workflow/master/cv_master_templatingandchangecontrol.txt for the full format spec.
    Markers: [NAME] [CONTACT] [INTRO] [ROLE] (one per role) [EDUCATION] [SKILLS]
             [EXTRAS_LANGUAGES] [EXTRAS_TECHNICAL] [EXTRAS_ADDITIONAL]
    The [EDUCATION] block must be copied verbatim from CV_master.txt — it is non-editable.
 
-Save output to: /roles/[CompanyName_RoleTitle]/03_tailored_CV_v1.md
+Save output to: /workflow/roles/[CompanyName_RoleTitle]/03_tailored_CV_v1.md
 
 ---
 
 After saving, do two things:
 
-1. Append the following to the Step Log section of /roles/[CompanyName_RoleTitle]/00_application_master.md:
+1. Append the following to the Step Log section of /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md:
 
 ### /2_Draft_CV
 Date: [date]
@@ -43,7 +43,7 @@ Signals emphasised: [brief list]
 Signals removed or de-emphasised: [brief list]
 Uncertain lines flagged: [count]
 
-2. Populate the CV Changes section of /roles/[CompanyName_RoleTitle]/00_application_master.md with:
+2. Populate the CV Changes section of /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md with:
 - What was changed from CV_master
 - What was removed
 - What language was mirrored from the JD

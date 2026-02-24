@@ -1,11 +1,11 @@
 Run Step 6: LinkedIn Message.
 
 1. Read:
-   - /master/writing_rules.txt
-   - /master/identity.txt
-   - /master/linkedin_master.txt
-   - /roles/[CompanyName_RoleTitle]/01_role_analysis.md
-   - /roles/[CompanyName_RoleTitle]/05_tailored_CV_final.md
+   - /workflow/master/writing_rules.txt
+   - /workflow/master/identity.txt
+   - /workflow/master/linkedin_master.txt
+   - /workflow/roles/[CompanyName_RoleTitle]/01_role_analysis.md
+   - /workflow/roles/[CompanyName_RoleTitle]/05_tailored_CV_final.md
 
 2. Ask me if needed: "Who is the LinkedIn message being sent to — recruiter, hiring manager, or someone else?"
 
@@ -19,11 +19,11 @@ Run Step 6: LinkedIn Message.
 
 4. Flag any line that sounds templated or generic.
 
-Save output to: /roles/[CompanyName_RoleTitle]/07_linkedin_message.md
+Save output to: /workflow/roles/[CompanyName_RoleTitle]/07_linkedin_message.md
 
 ---
 
-After saving, append the following to the Step Log section of /roles/[CompanyName_RoleTitle]/00_application_master.md:
+After saving, append the following to the Step Log section of /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md:
 
 ### /6_LinkedIn_Message
 Date: [date]

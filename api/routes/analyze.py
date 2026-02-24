@@ -32,10 +32,10 @@ router = APIRouter(prefix="/roles", tags=["analyze"])
 
 # ─── PATHS ────────────────────────────────────────────────────────────────────
 
-# Repo root is two levels above api/routes/
+# Repo root is two levels above api/routes/; master files now live under workflow/
 _REPO_ROOT    = Path(__file__).resolve().parents[2]
-_IDENTITY_PATH = _REPO_ROOT / "master" / "identity.txt"
-_PROFILE_PATH  = _REPO_ROOT / "master" / "profile_master.md"
+_IDENTITY_PATH = _REPO_ROOT / "workflow" / "master" / "identity.txt"
+_PROFILE_PATH  = _REPO_ROOT / "workflow" / "master" / "profile_master.md"
 
 # ─── CONSTANTS ────────────────────────────────────────────────────────────────
 

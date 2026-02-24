@@ -3,12 +3,12 @@ Run Step 8: Sync Architecture.
 Your job is to audit the current state of the entire hiring workflow system and update the master architecture document so it accurately reflects reality.
 
 1. Read every file in the system:
-   - /master/workflow_architecture.md (current architecture doc)
-   - /master/writing_rules.txt
-   - /master/identity.txt
+   - /workflow/master/workflow_architecture.md (current architecture doc)
+   - /workflow/master/writing_rules.txt
+   - /workflow/master/identity.txt
    - /CLAUDE.md
    - All files in /.claude/commands/
-   - All files in /system/
+   - All files in /workflow/system/
 
 2. Compare the current architecture doc against what actually exists:
    - Are all slash commands listed and accurately described?
@@ -21,7 +21,7 @@ Your job is to audit the current state of the entire hiring workflow system and 
 
 4. List all changes you intend to make before editing. Show me the diff in plain language. Wait for my confirmation before writing.
 
-5. After confirmation, update /master/workflow_architecture.md in place:
+5. After confirmation, update /workflow/master/workflow_architecture.md in place:
    - Update the "Last Updated" date
    - Correct any outdated descriptions
    - Add any new steps, files, or rules that exist but aren't documented

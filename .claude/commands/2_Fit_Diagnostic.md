@@ -1,10 +1,10 @@
 Run Step 1: Fit Diagnostic.
 
 1. Read:
-   - /roles/[CompanyName_RoleTitle]/01_role_analysis.md
-   - /master/CV_master.txt
-   - /master/profile_master.md
-   - /master/identity.txt
+   - /workflow/roles/[CompanyName_RoleTitle]/01_role_analysis.md
+   - /workflow/master/CV_master.txt
+   - /workflow/master/profile_master.md
+   - /workflow/master/identity.txt
 
 2. Compare Ron's background against the role analysis.
 
@@ -19,13 +19,13 @@ Run Step 1: Fit Diagnostic.
 
 6. State clearly: what must be emphasised, what must be de-emphasised, and what should not be mentioned.
 
-Save output to: /roles/[CompanyName_RoleTitle]/02_fit_diagnostic.md
+Save output to: /workflow/roles/[CompanyName_RoleTitle]/02_fit_diagnostic.md
 
 Be specific. No generic advice. Ground every point in actual CV content.
 
 ---
 
-After saving, append the following to the Step Log section of /roles/[CompanyName_RoleTitle]/00_application_master.md:
+After saving, append the following to the Step Log section of /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md:
 
 ### /1_Fit_Diagnostic
 Date: [date]

@@ -4,12 +4,15 @@ master/CV_master*.pdf
 master/profile_master.md
 master/linkedin_master.txt
 master/cv_master_templatingandchangecontrol.txt
+workflow/master/
 
 # Personal system tracking
 system/
+workflow/system/
 
 # Role-specific applications (personal)
 roles/
+workflow/roles/
 
 # Claude local settings
 .claude/settings.local.json

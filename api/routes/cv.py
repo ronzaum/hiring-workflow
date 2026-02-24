@@ -1,7 +1,7 @@
 """
 routes/cv.py — CV PDF generation endpoint.
 
-Wraps master/generate_cv.py without rewriting its logic.
+Wraps workflow/master/generate_cv.py without rewriting its logic.
 Accepts CV text in the standard [SECTION]-marker format, renders a PDF via
 WeasyPrint, and streams it back as a file download.
 
@@ -23,21 +23,22 @@ router = APIRouter(prefix="/cv", tags=["cv"])
 
 # ─── PATH SETUP ───────────────────────────────────────────────────────────────
 
-# Resolve the repo root (two levels up from api/routes/) and add to sys.path
-# so we can import generate_cv as a module without installing it.
-_REPO_ROOT = Path(__file__).resolve().parents[2]
-if str(_REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(_REPO_ROOT))
+# Resolve the repo root (two levels up from api/routes/) then extend to
+# workflow/ so that master/generate_cv.py is importable as master.generate_cv.
+_REPO_ROOT     = Path(__file__).resolve().parents[2]
+_WORKFLOW_ROOT = _REPO_ROOT / "workflow"
+if str(_WORKFLOW_ROOT) not in sys.path:
+    sys.path.insert(0, str(_WORKFLOW_ROOT))
 
-# Import the two pure functions from master/generate_cv.py.
+# Import the two pure functions from workflow/master/generate_cv.py.
 # We do NOT call main() — we only use parse_cv and generate_body.
 try:
     from master.generate_cv import parse_cv, generate_body  # type: ignore
     from master.generate_cv import TEMPLATE_PATH             # type: ignore
 except ImportError as exc:
     raise RuntimeError(
-        "Could not import master/generate_cv.py. "
-        "Ensure WeasyPrint is installed and master/ is on the path."
+        "Could not import workflow/master/generate_cv.py. "
+        "Ensure WeasyPrint is installed and workflow/master/ is on the path."
     ) from exc
 
 

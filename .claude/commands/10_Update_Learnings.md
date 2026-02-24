@@ -3,14 +3,14 @@ Run Step 9: Update Learnings.
 Your job is to synthesise intelligence from all completed applications and update the learnings document. This is not logging — it is pattern recognition across the full body of work.
 
 1. Read the current learnings document:
-   - /system/learnings.md
+   - /workflow/system/learnings.md
 
 2. Read all system logs:
-   - /system/application_tracker.md
-   - /system/rejection_log.md
-   - /system/master_change_log.md
+   - /workflow/system/application_tracker.md
+   - /workflow/system/rejection_log.md
+   - /workflow/system/master_change_log.md
 
-3. Read every completed role folder in /roles/:
+3. Read every completed role folder in /workflow/roles/:
    - For each role, read:
      - 01_role_analysis.md (go/no-go, probability estimate)
      - 02_fit_diagnostic.md (signal gaps)
@@ -19,8 +19,8 @@ Your job is to synthesise intelligence from all completed applications and updat
    - Skip roles that do not have a finalisation record — they are not complete.
 
 4. Read:
-   - /master/identity.txt
-   - /master/writing_rules.txt
+   - /workflow/master/identity.txt
+   - /workflow/master/writing_rules.txt
 
 5. Synthesise across all completed applications. Look for:
    - What signals consistently land well across HM reviews
@@ -39,7 +39,7 @@ Your job is to synthesise intelligence from all completed applications and updat
    - What you intend to change or add in learnings.md
    Wait for my confirmation before writing.
 
-7. After confirmation, update /system/learnings.md:
+7. After confirmation, update /workflow/system/learnings.md:
    - Edit sections in place — do not append raw notes
    - Update the interview rate table with current numbers
    - Update "Last Updated" and "Applications Analysed"

@@ -7,11 +7,11 @@ If NO: Log "Cover letter not required" in the finalisation record and stop.
 If YES:
 
 1. Read:
-   - /master/writing_rules.txt
-   - /master/identity.txt
-   - /master/profile_master.md
-   - /roles/[CompanyName_RoleTitle]/01_role_analysis.md
-   - /roles/[CompanyName_RoleTitle]/05_tailored_CV_final.md
+   - /workflow/master/writing_rules.txt
+   - /workflow/master/identity.txt
+   - /workflow/master/profile_master.md
+   - /workflow/roles/[CompanyName_RoleTitle]/01_role_analysis.md
+   - /workflow/roles/[CompanyName_RoleTitle]/05_tailored_CV_final.md
 
 2. Draft the cover letter or written question responses:
    - Do not repeat what is already in the CV
@@ -28,11 +28,11 @@ If YES:
 
 4. Revise based on the review. Loop if needed.
 
-Save final output to: /roles/[CompanyName_RoleTitle]/06_cover_letter_final.md
+Save final output to: /workflow/roles/[CompanyName_RoleTitle]/06_cover_letter_final.md
 
 ---
 
-After saving, append the following to the Step Log section of /roles/[CompanyName_RoleTitle]/00_application_master.md:
+After saving, append the following to the Step Log section of /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md:
 
 ### /5_Cover_Letter
 Date: [date]

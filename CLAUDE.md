@@ -1,5 +1,5 @@
 # Hiring Workflow — Claude Code Operating Instructions
-# Last Updated: 2026-02-20
+# Last Updated: 2026-02-24
 
 ---
 
@@ -13,7 +13,7 @@ The objective is **interview rate per role via positioning clarity** — not vol
 ## Identity Rule
 
 Identity is stable across all roles. Expression changes. Identity does not.
-Always read `/master/identity.txt` before any output.
+Always read `/workflow/master/identity.txt` before any output.
 
 Do NOT invent, inflate, or assume experience. If uncertain about a claim, ask.
 
@@ -31,7 +31,7 @@ All written outputs must follow:
 - No invented experience
 - No title inflation
 
-Always check `/master/writing_rules.txt` before drafting any output.
+Always check `/workflow/master/writing_rules.txt` before drafting any output.
 
 ---
 
@@ -40,22 +40,22 @@ Always check `/master/writing_rules.txt` before drafting any output.
 These files are the permanent source of truth. NEVER auto-edit them.
 
 Content masters:
-- `/master/CV_master.txt`
-- `/master/CV_master(lock).pdf`
-- `/master/profile_master.md`
-- `/master/linkedin_master.txt`
-- `/master/writing_rules.txt`
-- `/master/identity.txt`
-- `/master/cv_master_templatingandchangecontrol.txt`
+- `/workflow/master/CV_master.txt`
+- `/workflow/master/CV_master(lock).pdf`
+- `/workflow/master/profile_master.md`
+- `/workflow/master/linkedin_master.txt`
+- `/workflow/master/writing_rules.txt`
+- `/workflow/master/identity.txt`
+- `/workflow/master/cv_master_templatingandchangecontrol.txt`
 
 CV generation infrastructure (do not auto-edit):
-- `/master/CV_template.html`
-- `/master/generate_cv.py`
-- `/master/generate_cv.sh`
+- `/workflow/master/CV_template.html`
+- `/workflow/master/generate_cv.py`
+- `/workflow/master/generate_cv.sh`
 
 ## Editable Outputs Rule
 
-Files inside `/roles/[CompanyName_RoleTitle]/` are editable outputs. They are never masters.
+Files inside `/workflow/roles/[CompanyName_RoleTitle]/` are editable outputs. They are never masters.
 This includes generated PDFs. You may read, edit, or regenerate them at any time.
 
 ---
@@ -77,7 +77,7 @@ Steps cannot be rearranged or skipped.
 | Step 6: LinkedIn Message | `07_linkedin_message.md` |
 | Step 7: Finalise Application | `08_finalisation_record.md` |
 
-All outputs go in: `/roles/[CompanyName_RoleTitle]/`
+All outputs go in: `/workflow/roles/[CompanyName_RoleTitle]/`
 
 ---
 

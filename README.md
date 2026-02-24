@@ -23,7 +23,7 @@ A fixed 10-step pipeline. Steps cannot be rearranged or skipped.
 | 5 — Cover Letter | `/6_Cover_Letter` | Draft → HM review → revise loop (skip and log if not required) |
 | 6 — LinkedIn Message | `/7_LinkedIn_Message` | Warm outreach with proof and an intelligent question |
 | 7 — Finalise | `/8_Finalise` | Finalisation record, probability estimate, tracker update |
-| 8 — Sync Architecture | `/9_Sync_Architecture` | Keeps this doc accurate as the system evolves |
+| 8 — Sync Architecture | `/9_Sync_Architecture` | Keeps system docs accurate as the workflow evolves |
 | 9 — Update Learnings | `/10_Update_Learnings` | Compound intelligence across all completed applications |
 
 Each step reads from master files (CV, profile, identity, writing rules) and writes a structured output to the role folder. Every step appends a summary to `00_application_master.md`, so the full application history is always in one place.
@@ -34,16 +34,21 @@ Each step reads from master files (CV, profile, identity, writing rules) and wri
 
 ```
 hiring-workflow/
-├── CLAUDE.md                          ← Claude's operating instructions (auto-loaded)
-├── Hiring_Workflow_Architecture.md    ← Architecture overview
-├── master/
-│   ├── workflow_architecture.md       ← Full system design and step definitions
-│   ├── generate_cv.py                 ← CV generation script (MD → PDF via HTML template)
-│   ├── generate_cv.sh                 ← Shell wrapper
-│   ├── CV_template.html               ← HTML/CSS CV template
-│   └── writing_rules.txt              ← Tone guardrails, banned phrases, output rules
+├── CLAUDE.md                              ← Claude's operating instructions (auto-loaded)
+├── workflow/
+│   ├── master/                            ← Source of truth files (never auto-edited)
+│   │   ├── workflow_architecture.md       ← Full system design and step definitions
+│   │   ├── generate_cv.py                 ← CV generation script (MD → PDF via WeasyPrint)
+│   │   ├── generate_cv.sh                 ← Shell wrapper
+│   │   ├── CV_template.html               ← HTML/CSS CV template
+│   │   └── writing_rules.txt              ← Tone guardrails, banned phrases, output rules
+│   ├── roles/                             ← Per-application output folders
+│   └── system/                            ← Tracking logs (tracker, change log, learnings)
+├── product/
+│   └── CHANGELOG.md
+├── api/                                   ← FastAPI layer (REST API over the workflow)
 └── .claude/
-    └── commands/                      ← Slash command prompts (one per pipeline step)
+    └── commands/                          ← Slash command prompts (one per pipeline step)
 ```
 
 Personal master files (CV, profile, application history) are excluded via `.gitignore`.
@@ -99,9 +104,9 @@ Auto-docs at `http://127.0.0.1:8000/docs`
 | POST | `/cv/generate` | Generate CV PDF from section-marker text |
 | POST | `/roles/{id}/analyze` | Autonomous company research + positioning brief |
 
-The CV endpoint wraps `master/generate_cv.py` directly — no logic duplication.
+The CV endpoint wraps `workflow/master/generate_cv.py` directly — no logic duplication.
 
-The analyze endpoint runs an agentic Claude loop with web search: given only a company name and role title, it researches founders, funding, product signals, and recent public communications, then synthesises a positioning brief grounded in `master/identity.txt` and `master/profile_master.md`. Nothing is invented.
+The analyze endpoint runs an agentic Claude loop with web search: given only a company name and role title, it researches founders, funding, product signals, and recent public communications, then synthesises a positioning brief grounded in `workflow/master/identity.txt` and `workflow/master/profile_master.md`. Nothing is invented.
 
 ---
 

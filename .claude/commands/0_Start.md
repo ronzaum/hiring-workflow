@@ -28,9 +28,9 @@ Do not proceed until the JD is provided in full.
 
 ### Create the role folder and master file
 
-Create folder: /roles/[CompanyName_RoleTitle]/
+Create folder: /workflow/roles/[CompanyName_RoleTitle]/
 
-Create file: /roles/[CompanyName_RoleTitle]/00_application_master.md
+Create file: /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md
 
 Use this structure:
 
@@ -40,7 +40,7 @@ Use this structure:
 
 Started: [date]
 Status: In Progress
-Folder: /roles/[CompanyName_RoleTitle]/
+Folder: /workflow/roles/[CompanyName_RoleTitle]/
 
 ---
 
@@ -93,13 +93,13 @@ Tell me:
 
 Ask: "Which role? Provide company name and role title."
 
-If unclear, list all folders in /roles/ and ask me to confirm which one.
+If unclear, list all folders in /workflow/roles/ and ask me to confirm which one.
 
 ### Load context
 
 Read:
-- /roles/[CompanyName_RoleTitle]/00_application_master.md
-- All files that exist in /roles/[CompanyName_RoleTitle]/
+- /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md
+- All files that exist in /workflow/roles/[CompanyName_RoleTitle]/
 
 ### Output a status summary
 
@@ -120,15 +120,15 @@ Full context is now loaded. All subsequent slash commands in this session can re
 
 Ask: "Which role? Provide company name and role title."
 
-If unclear, list all folders in /roles/ and ask me to confirm which one.
+If unclear, list all folders in /workflow/roles/ and ask me to confirm which one.
 
 ### Load context
 
 Read:
-- /roles/[CompanyName_RoleTitle]/00_application_master.md
-- All files that exist in /roles/[CompanyName_RoleTitle]/
-- /system/rejection_log.md
-- /system/master_change_log.md
+- /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md
+- All files that exist in /workflow/roles/[CompanyName_RoleTitle]/
+- /workflow/system/rejection_log.md
+- /workflow/system/master_change_log.md
 
 ### Accept input
 
@@ -143,14 +143,14 @@ Do not proceed until I have supplied the input.
 
 ### Process and update
 
-1. Update /roles/[CompanyName_RoleTitle]/00_application_master.md:
+1. Update /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md:
    - Append to the Final Outcome section with date, input type, and summary of what was received
    - Update Status if appropriate (e.g. Rejected, Interview Scheduled, Offer Received)
 
-2. Append to /system/rejection_log.md:
+2. Append to /workflow/system/rejection_log.md:
    - Date, Company, Role, Outcome stage, Summary of feedback, Any patterns noted
 
-3. Append to /system/master_change_log.md:
+3. Append to /workflow/system/master_change_log.md:
    - Only if positioning insights, signal patterns, or recurring gaps are present in the feedback
    - If nothing new: skip this step, do not pad
 

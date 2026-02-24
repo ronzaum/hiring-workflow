@@ -7,9 +7,9 @@ If NO: Ask which step to return to and stop.
 If YES:
 
 1. Read:
-   - /master/identity.txt
-   - /master/writing_rules.txt
-   - All outputs in /roles/[CompanyName_RoleTitle]/
+   - /workflow/master/identity.txt
+   - /workflow/master/writing_rules.txt
+   - All outputs in /workflow/roles/[CompanyName_RoleTitle]/
 
 2. Generate a 1-page finalisation record containing:
    - Role: company, title, date applied
@@ -21,19 +21,19 @@ If YES:
    - Cover letter: yes/no
    - LinkedIn message: sent to whom
 
-3. Append a new row to /system/application_tracker.md with:
+3. Append a new row to /workflow/system/application_tracker.md with:
    - Date, Company, Role, Folder path, Interview %, Status: Applied
 
-4. Append to /system/master_change_log.md:
+4. Append to /workflow/system/master_change_log.md:
    - Any new positioning decisions or signal patterns observed
 
-Save finalisation record to: /roles/[CompanyName_RoleTitle]/08_finalisation_record.md
+Save finalisation record to: /workflow/roles/[CompanyName_RoleTitle]/08_finalisation_record.md
 
 Remind me: "Update rejection_log.md after you receive an outcome."
 
 ---
 
-After saving, update the Final Outcome section of /roles/[CompanyName_RoleTitle]/00_application_master.md with:
+After saving, update the Final Outcome section of /workflow/roles/[CompanyName_RoleTitle]/00_application_master.md with:
 
 ### /7_Finalise
 Date applied: [date]

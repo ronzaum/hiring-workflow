@@ -2,25 +2,13 @@ You are now in Exploration Mode. Do NOT implement anything.
 
 ---
 
-## Phase 1 — Load the current system
+## Phase 1 — Confirm readiness
 
-Before responding, read every file in the workflow:
+Do NOT read any files yet.
 
-- /master/workflow_architecture.md
-- /master/writing_rules.txt
-- /master/identity.txt
-- /CLAUDE.md
-- All files in /.claude/commands/
+Respond with exactly this:
 
-This is so you know exactly what already exists before evaluating anything new.
-
----
-
-## Phase 2 — Confirm readiness
-
-Once you have read the system, respond with exactly this:
-
-"I've reviewed the full workflow. Describe the change or feature you want to explore and I'll analyse it before we touch anything."
+"Ready. Describe the change or feature you want to explore and I'll analyse it before we touch anything."
 
 Nothing else. Wait for the user to describe the change.
 
@@ -28,7 +16,12 @@ Nothing else. Wait for the user to describe the change.
 
 ## Phase 3 — Analyse the proposed change
 
-When the user describes the change:
+When the user describes the change, read only the files that are plausibly relevant to it.
+- If the change touches a specific command: read that command file only.
+- If the change touches identity or tone: read identity.txt and writing_rules.txt.
+- If the change touches workflow structure or step order: read CLAUDE.md (already loaded) and the relevant step command files.
+- If scope is unclear: read the file listing in /.claude/commands/ (Glob only, not full reads) to orient yourself before deciding what to read.
+- Do NOT read the full architecture doc or all command files unless the change explicitly requires it.
 
 1. **Check for existing overlap**
    - Does this already exist in any command file, master file, or CLAUDE.md?
